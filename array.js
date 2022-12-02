@@ -4,9 +4,45 @@
         - Выводит получившийся массив в отсортированном по возрастанию виде
         - Подсчитывает и возвращает сумму элементов массива*/
 
+const input = document.querySelector('.inputNumber')
+const oneMoreBtn = document.querySelector('.oneMore')
+const doneBtn = document.querySelector('.done')
+const error = document.querySelector('.error')
+const result = document.querySelector('.result')
+const sum = document.querySelector('.sum')
 
 
-function sumInput() {
+let arr = []
+
+const addOne = () => {
+    let number = Number(input.value)
+    if (number) {
+        arr.push(number)
+        console.log(arr);
+    } else {
+        error.innerHTML = 'Ошибка'
+    }
+    result.innerHTML = arr
+    input.value = ''
+}
+const getSum = () => {
+    let res = 0
+    for (let i = 0; i < arr.length; i++) {
+        res = res + arr[i]
+    }
+    sum.innerHTML = res
+}
+
+oneMoreBtn.addEventListener('click', addOne)
+doneBtn.addEventListener('click', getSum)
+
+
+
+
+
+
+
+/*function sumInput() {
     let numbers = [];
     let a = document.querySelector('.num1');
     let b = document.querySelector('.num2');
@@ -18,7 +54,7 @@ function sumInput() {
     sum = +number;
     return sum;
 }
-alert(sumInput());
+alert(sumInput());*/
 
 
 

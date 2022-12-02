@@ -24,6 +24,9 @@ let array = [
     [1, 2, 3],
     [1, 2, 3, 4]
 ];
-console.log(array.indexOf(array.lenght > 3));
+function checkLength(array) {
+    return array.length > 3
+};
+array.findIndex(checkLength);
 
 
